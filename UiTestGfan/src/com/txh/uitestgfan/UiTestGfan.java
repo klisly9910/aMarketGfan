@@ -147,6 +147,37 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 		Assert.assertEquals(true, waitMesg.exists());
 		
 	}
+	/**
+	 * 直接点击登录按钮/用户名为空直接点击登录的情况一样
+	 * @throws UiObjectNotFoundException
+	 */
+	public void clickLoginImedetely() throws UiObjectNotFoundException{
+		UiObject clicklogin = new UiObject(new UiSelector()
+						.resourceId("com.mappn.gfan:id/rl_login"));
+		
+		UiObject waitMesg = new UiObject(new UiSelector().resourceId("android:id/message"));
+		Assert.assertEquals(true, waitMesg.exists());
+		
+	}
+	/**
+	 * 输入正确的用户名，密码为空点击登录
+	 * @throws UiObjectNotFoundException
+	 */
+	public void blankPass() throws UiObjectNotFoundException{
+		UiObject userName = new UiObject(new UiSelector()
+						.resourceId("com.mappn.gfan:id/et_gfan"));
+		userName.setText("imopan88");
+		UiObject clicklogin = new UiObject(new UiSelector()
+						.resourceId("com.mappn.gfan:id/rl_login"));
+		
+		UiObject waitMesg = new UiObject(new UiSelector().resourceId("android:id/message"));
+		Assert.assertEquals(true, waitMesg.exists());
+		
+	}
+	/**
+	 * 退出登录
+	 * @throws UiObjectNotFoundException
+	 */
 	public void userLogout() throws UiObjectNotFoundException{
 		UiObject userHead = new UiObject(new UiSelector()
 							.resourceId("com.mappn.gfan:id/iv_user_head"));
